@@ -1,0 +1,26 @@
+/* styles.css */
+body {
+    font-family: sans-serif;
+    margin: 20px;
+}
+
+h1 {
+    text-align: center;
+}
+
+#report-plot {
+    width: 100%;
+    height: 400px; /* Adjust height as needed */
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.form-field {
+    margin-bottom: 10px;
+}
+
+/* Add additional styles for form elements (labels, input fields) */

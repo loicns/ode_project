@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mapping List</title>
+</head>
+<body>
+    <h1>Mapping Configurations</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Source</th>
+                <th>Source Field</th>
+                <th>Target Field</th>
+                <th>Data Type</th>
+                </tr>
+        </thead>
+        <tbody>
+            {% for mapping in mappings %}
+                <tr>
+                    <td>{{ mapping.source }}</td>
+                    <td>{{ mapping.field_name_source }}</td>
+                    <td>{{ mapping.field_name_target }}</td>
+                    <td>{{ mapping.data_type }}</td>
+                    </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Upload Email</title>
+</head>
+<body>
+  <h1>Upload Email File</h1>
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}  
+    <label for="file">Select email file (.eml or .msg):</label>
+    <input type="file" name="file" id="file" required accept=".eml,.msg">
+    <br>
+    <button type="submit">Upload Email</button>
+  </form>
+
+  {% if error_message %}
+    <p style="color: red;">{{ error_message }}</p>
+  {% endif %}
+</body>
+</html>

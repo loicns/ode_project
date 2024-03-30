@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mapping Form</title>
+    <style>
+        .errors {
+            color: red;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .error-message {
+            margin-left: 15px;
+        }
+
+        .invalid input {
+            border-color: red;  /* Highlight invalid form fields (optional) */
+        }
+    </style>
+</head>
+<body>
+    <h1>Mapping Configuration</h1>
+
+    {% if form.errors %}
+        <ul class="errors">
+            {% for field, errors in form.errors.items %}
+                <li>
+                    {{ field }}:
+                    <ul>
+                        {% for error in errors %}
+                            <li class="error-message">{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                </li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+    <a href="{% url 'data_mapping:mapping_view' %}">Go to Mapping View</a>
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save Configuration</button>
+    </form>
+
+</body>
+</html>

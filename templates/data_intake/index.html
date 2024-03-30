@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Management App</title>
+  </head>
+<body>
+  <h1>Data Management App</h1>
+  <p>Welcome to the data management application. Use the navigation links below to access various functionalities.</p>
+
+  <ul>
+    <li><a href="{% url 'data_intake:upload' %}">Upload Data</a></li>
+    <li><a href="{% url 'data_mapping:mapping_view' %}">Data Mapping</a></li>
+    </ul>
+
+  <div id="content"></div>
+
+  </body>
+</html>
